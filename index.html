@@ -3,8 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>ToDo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
+<div class="container light">
+    <div class="main">
+        <div class="header">
+            <h1 class="title">TODO</h1>
+            <button aria-label="Switch Theme" class="btn-switch">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                    <path fill="#FFF" fill-rule="evenodd"
+                          d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"></path>
+                </svg>
+            </button>
+        </div>
+        <form>
+            <div class="input-wrapper">
+                <button aria-label="Add new item" type="submit" class="input-check"></button>
+                <input id="input" aria-label="Creat a new ToDo..." type="text" placeholder="Create a new todo..."
+                       value="">
+            </div>
+        </form>
+        <div class="todo-list-wrapper">
+            <ul id="list">
+                <li class="item">
+                    <button class="btn-select btn-Unselect"><i class="fas fa-check"></i></button>
+                    <p class="test-Undo text-do">Test List</p>
+                    <div class="close" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                            <path fill="#494C6B" fill-rule="evenodd"
+                                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"></path>
+                        </svg>
+                    </div>
+
+                </li>
+            </ul>
+            <div class="todo-list-footer">
+                <span class="item-left">0 items left </span>
+                <div class="filter-wrapper">
+                    <button aria-label="All" value="all" class="filter-option selected">All</button>
+                    <button aria-label="Active" value="active" class="filter-option">Active</button>
+                    <button aria-label="Completed" value="completed" class="filter-option">Completed</button>
+                </div>
+                <button aria-label="Clear Completed" class="btn-clear"> Clear Completed</button>
+            </div>
+        </div>
+        <span class="dad">Drag and drop to reorder list</span>
+    </div>
+    <section class="attribute">
+        <p>Challenge by <a href="#">Frontend Mentor</a>. Coded with lots of❤️ by <a href="#">Mi Souto</a>.</p>
+    </section>
+</div>
 
 </body>
 </html>
