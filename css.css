@@ -9,12 +9,26 @@ div {
     display: block;
 }
 
+#moon {
+    display: block;
+}
+
+#sun {
+    display: none;
+}
+
+#btn-switch {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
 .container {
     min-height: 100vh;
     width: 100vw;
 }
 
-.light {
+body {
     background-color: #fff;
     background-image: url(image/img.png);
     background-size: 100% auto;
@@ -36,12 +50,10 @@ div {
     margin-bottom: 50px;
 }
 
-.btn-switch {
+#btn-switch {
     background-color: transparent;
     cursor: pointer;
     border: none;
-    width: 25px;
-    height: 25px;
 }
 
 .title {
@@ -50,7 +62,7 @@ div {
     font-weight: 700;
 }
 
-.input-wrapper {
+#input-wrapper {
     background: #fff;
     box-shadow: 0 35px 50px rgba(194, 195, 214, 0.5);
     width: 100%;
@@ -61,7 +73,7 @@ div {
 
 }
 
-.input-check {
+#input-check {
     outline: none;
     display: inline-block;
     border-radius: 50%;
@@ -83,7 +95,7 @@ input {
 }
 
 input:focus {
-    border-color: transparent;
+    outline: none;
 }
 
 .todo-list-wrapper {
@@ -146,6 +158,7 @@ button, li {
     width: 100px;
     font-size: 14px;
     letter-spacing: -0.25px;
+    border: 0.5px solid #EEEEEE;
 }
 
 .selected {
@@ -179,13 +192,67 @@ a {
     color: #3a7cfd;
 }
 
-.close{
- opacity: 1;
+.close {
+    opacity: 0;
+    cursor: pointer;
 }
 
-.item{
+#item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    border: 0.5px solid #EEEEEE
+
+}
+
+#list {
+    cursor: grab;
+}
+
+.text-style {
+    color: #777a92;
+    font-size: 18px;
+    letter-spacing: -0.25px;
+    margin-right: 24vw;
+}
+
+.text-do {
+    text-decoration: line-through;
+    color: #cacde8;
+}
+
+
+.btn-style {
+    border-radius: 100%;
+    outline: none;
+    border: 0;
+    cursor: grab;
+}
+
+.btn-select {
+    background-image: linear-gradient(to bottom right, #42A5F5, #BA68C8);
+    width: 26px;
+    height: 26px;
+
+}
+
+.btn-Unselect {
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #cacde8;
+
+}
+
+.btn-Unselect:hover {
+    border-right-color: #CE93D8;
+    border-top-color: #81D4FA;
+    border-left-color: #81D4FA;
+    border-bottom-color: #CE93D8;
+}
+
+.i-style {
+    color: #fff;
+    font-size: 10px;
 }
