@@ -1,4 +1,4 @@
-alert("hello")
+// alert("hello")
 // Selectors
 let clearCompleted = document.querySelector('.btn-clear')
 let list = document.querySelector('#list')
@@ -12,9 +12,9 @@ let todoListWrapper=document.querySelector('.todo-list-wrapper')
 let  hr=document.getElementById('hr')
 let textDo=document.getElementsByClassName('text-do')[0]
 // **************************** AddToDoList ****************************
-const CHECK = "btn-select";
-const UNCHECK = "btn-Unselect";
-const LINE_THROUGH = "text-do";
+// const CHECK = "btn-select";
+// const UNCHECK = "btn-Unselect";
+// const LINE_THROUGH = "text-do";
 
 //add to do function
 function addToDo(toDo) {
