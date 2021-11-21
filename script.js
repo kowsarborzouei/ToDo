@@ -12,7 +12,31 @@ let todoListWrapper=document.querySelector('.todo-list-wrapper')
 let  hr=document.getElementById('hr')
 let textDo=document.getElementsByClassName('text-do')[0]
 // **************************** AddToDoList ****************************
+const CHECK = "btn-select";
+const UNCHECK = "btn-Unselect";
+const LINE_THROUGH = "text-do";
 
+//add to do function
+function addToDo(toDo) {
+    const item = `
+                    <li id="item">
+                    <button  class="btn-style btn-Unselect"><i class="fas fa-check i-style"></i></button>
+                    <p class=" text-do text-style">${toDo}</p>
+                    <div class="close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                            <path fill="#494C6B" fill-rule="evenodd"
+                                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"></path>
+                        </svg>
+                    </div>
+                </li>
+                <hr id="hr">
+`;
+    const position = "afterbegin";
+    list.insertAdjacentHTML(position, item);
+
+
+}
+addToDo("Test list");
 
 
 // **************************** DarkMode ****************************
