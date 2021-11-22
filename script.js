@@ -10,34 +10,12 @@ let sun = document.getElementById('sun')
 let moon = document.getElementById('moon')
 let todoListWrapper = document.querySelector('.todo-list-wrapper')
 let hr = document.querySelector('#hr')
-let textDo = document.getElementsByClassName('text-do')[0]
+let textDo = document.querySelector('.text-do')
+let close=document.getElementById('close')
 // **************************** AddToDoList ****************************
 // const CHECK = "btn-select";
 // const UNCHECK = "btn-Unselect";
 // const LINE_THROUGH = "text-do";
-
-//add to do function
-function addToDo(toDo) {
-    const item = `
-                    <li id="item">
-                    <button  class="btn-style btn-Unselect"><i class="fas fa-check i-style"></i></button>
-                    <p class=" text-do text-style">${toDo}</p>
-                    <div class="close">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
-                            <path fill="#494C6B" fill-rule="evenodd"
-                                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"></path>
-                        </svg>
-                    </div>
-                </li>
-                <hr id="hr">
-`;
-    const position = "afterbegin";
-    list.insertAdjacentHTML(position, item);
-
-
-}
-
-addToDo("Test list");
 
 
 // **************************** DarkMode ****************************
@@ -55,9 +33,7 @@ function btnSwitch() {
         moon.style.display = 'none';
         inputCheck.style.border = '1px solid #676666'
         textDo.style.color = '#676666'
-
         hr.style.border = '0.5px solid #676666'
-
 
 
     } else {
@@ -76,6 +52,40 @@ function btnSwitch() {
 
     }
 }
+
+// **************************** Add To Do Function ****************************
+function addToDo(toDo) {
+    const item = `
+                    <li id="item">
+                    <button  class="btn-style btn-Unselect"><i class="fas fa-check i-style"></i></button>
+                    <p class=" text-do text-style">${toDo}</p>
+                    <div id="close" onmouseenter="hiddenClose(this)">
+                        <svg id=svgId" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                            <path fill="#494C6B" fill-rule="evenodd"
+                                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"></path>
+                        </svg>
+                    </div>
+                </li>
+                <hr id="hr">
+`;
+    const position = "beforeend";
+    list.insertAdjacentHTML(position, item);
+
+
+}
+
+addToDo("Test list1");
+addToDo("Test list2");
+//**************************** Add an item to the list user the enter key ****************************
+const addInput = (e) => {
+    e.preventDefault();
+    addToDo(input.value);
+    input.value="";
+}
+
+inputCheck.addEventListener('click', addInput)
+
+
 
 
 

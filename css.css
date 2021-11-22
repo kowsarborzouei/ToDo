@@ -14,7 +14,7 @@ div {
 }
 
 #sun {
-   display: none;
+    display: none;
 }
 
 .btn-switch {
@@ -191,8 +191,8 @@ a {
     color: #3a7cfd;
 }
 
-.close {
-    opacity: 0;
+#close {
+    display: none;
     cursor: pointer;
 }
 
@@ -201,25 +201,31 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-
-
 }
+
 
 #list {
     cursor: grab;
+}
+
+#item:hover #close {
+    display: block;
 }
 
 .text-style {
     color: #777a92;
     font-size: 18px;
     letter-spacing: -0.25px;
-    margin-right: 24vw;
+    position: absolute;
+    left: 33%;
+
 }
 
-.text-do {
-    text-decoration: line-through;
-    color: #cacde8;
-}
+/*.text-do {*/
+/*    text-decoration: line-through;*/
+/*    color: #cacde8;*/
+/*    */
+/*}*/
 
 
 .btn-style {
@@ -254,6 +260,7 @@ a {
     font-size: 10px;
     display: none;
 }
-hr{
+
+hr {
     border: 0.5px solid #EEEEEE
 }
