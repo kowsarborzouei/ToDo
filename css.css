@@ -217,15 +217,15 @@ a {
     font-size: 18px;
     letter-spacing: -0.25px;
     position: absolute;
-    left: 36%;
+    left: 36.5%;
 
 }
 
-/*.text-do {*/
-/*    text-decoration: line-through;*/
-/*    color: #cacde8;*/
-/*    */
-/*}*/
+.text-do {
+    text-decoration: line-through;
+    color: #cacde8;
+
+}
 
 
 .btn-style {
@@ -258,7 +258,6 @@ a {
 .i-style {
     color: #fff;
     font-size: 10px;
-    display: none;
 }
 
 hr {
