@@ -157,7 +157,7 @@ button, li {
     color: var(--filter-hover-color);
 }
 
-.item-left {
+#item-left {
     color: #777a92;
     display: block;
     width: 100px;

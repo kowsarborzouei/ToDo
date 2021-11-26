@@ -67,7 +67,6 @@ function addToDo(toDo, id, done, trash) {
 
 // addToDo('coffe',1,true,false);
 //**************************** Add an item to the list user the enter key ****************************
-
 const addInput = (e) => {
     const toDo = input.value;
     e.preventDefault();
@@ -82,11 +81,23 @@ const addInput = (e) => {
     localStorage.setItem("TODO", JSON.stringify(LIST));
     id++;
     input.value = "";
+    location.reload()
 
 }
 
-
 inputCheck.addEventListener('click', addInput)
+// **************************** Item Left ****************************
+function itemLeft(){
+    let count=0;
+    LIST.forEach(item=>{
+        if(!item.done){
+            count++
+        }
+    })
+    document.getElementById('item-left').innerHTML=`${count}`+"items left"
+
+}
+itemLeft();
 
 // **************************** Complete to do ****************************
 function completeTodo(element) {
@@ -121,11 +132,13 @@ list.addEventListener('click', function (event) {
 });
 // **************************** Clear Completed ****************************
 clearCompleted.addEventListener('click',function (){
-    console.log(LIST)
-    let filteredArray = LIST.filter(value => value.done === true);
-    console.log(LIST)
-    console.log(filteredArray)
-    filteredArray.remove();
+    // console.log(LIST)
+    // let filteredArray = LIST.filter(value => value.done === true);
+    // console.log(LIST)
+    // console.log(filteredArray)
+    // filteredArray.remove();
+    localStorage.clear();
+    location.reload();
 })
 // **************************** DarkMode ****************************
 function btnSwitch() {
