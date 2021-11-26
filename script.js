@@ -81,7 +81,7 @@ const addInput = (e) => {
     localStorage.setItem("TODO", JSON.stringify(LIST));
     id++;
     input.value = "";
-    location.reload()
+    itemLeft();
 
 }
 
@@ -97,8 +97,6 @@ function itemLeft(){
     document.getElementById('item-left').innerHTML=`${count}`+"items left"
 
 }
-itemLeft();
-
 // **************************** Complete to do ****************************
 function completeTodo(element) {
     element.classList.toggle(CHECK);
@@ -133,13 +131,13 @@ list.addEventListener('click', function (event) {
 });
 // **************************** Clear Completed ****************************
 clearCompleted.addEventListener('click',function (){
-    // console.log(LIST)
-    // let filteredArray = LIST.filter(value => value.done === true);
-    // console.log(LIST)
-    // console.log(filteredArray)
-    // filteredArray.remove();
-    localStorage.clear();
-    location.reload();
+    console.log(LIST)
+    let filteredArray = LIST.filter(value => value.done === true);
+    console.log(LIST)
+    console.log(filteredArray)
+    filteredArray.isClear=true
+    // localStorage.clear();
+    // location.reload();
 })
 // **************************** DarkMode ****************************
 function btnSwitch() {
