@@ -17,6 +17,7 @@ let iStyle = document.querySelector('.i-style')
 const CHECK = "btn-select";
 const UNCHECK = "btn-Unselect";
 const LINE_THROUGH = "text-do";
+const CLEAR_COMPONENT="btn-clear"
 // **************************** Variabls ****************************
 let LIST, id;
 // **************************** Get item form localstorage ****************************
@@ -84,7 +85,6 @@ const addInput = (e) => {
     itemLeft();
 
 }
-
 inputCheck.addEventListener('click', addInput)
 // **************************** Item Left ****************************
 function itemLeft(){
@@ -95,8 +95,7 @@ function itemLeft(){
         }
     })
     document.getElementById('item-left').innerHTML=`${count}`+"items left"
-
-}
+   }
 // **************************** Complete to do ****************************
 function completeTodo(element) {
     element.classList.toggle(CHECK);
@@ -104,9 +103,7 @@ function completeTodo(element) {
     element.parentNode.querySelector('.text-style').classList.toggle(LINE_THROUGH);
     console.log(LIST[element.id].done)
     LIST[element.id].done = LIST[element.id].done ? false : true;
-
 }
-
 // **************************** Remove to do ****************************
 function removeToDo(element) {
     element.parentNode.parentNode.parentNode.removeChild(element.parentNode.parentNode);
@@ -127,17 +124,20 @@ list.addEventListener('click', function (event) {
     }
     // add item to localstorage
     localStorage.setItem("TODO", JSON.stringify(LIST))
-
 });
 // **************************** Clear Completed ****************************
 clearCompleted.addEventListener('click',function (){
-    console.log(LIST)
-    let filteredArray = LIST.filter(value => value.done === true);
-    console.log(LIST)
-    console.log(filteredArray)
-    filteredArray.isClear=true
-    // localStorage.clear();
+    // console.log(LIST)
+    let filteredArray = LIST.filter(value => value.done === false);
+    // console.log(filteredArray)
+    // filteredArray.remove();
+    // filteredArray.isClear=true
+    // LIST = LIST.slice(LIST.length);
+    localStorage.clear();
     // location.reload();
+    console.log(filteredArray)
+    loadList(filteredArray);
+
 })
 // **************************** DarkMode ****************************
 function btnSwitch() {
