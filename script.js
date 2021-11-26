@@ -122,6 +122,7 @@ list.addEventListener('click', function (event) {
     const elementJob = element.attributes.job.value;
     if (elementJob === 'complete') {
         completeTodo(element)
+        itemLeft();
 
     } else if (elementJob === 'remove') {
         removeToDo(element)
